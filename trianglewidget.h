@@ -17,13 +17,13 @@ class TriangleWidget : public BaseWidget
     Q_OBJECT
 
     enum TypeTriangle {
-        equilateralTriangle, /// ровностороний
+        versatileTriangle, /// ровностороний
         isoscelesTriangle, /// равнобедренный
-        orthogonalTriangle, /// прямоугольный
+        rightTriangle, /// прямоугольный
     };
 
 public:
-    explicit TriangleWidget(QWidget *parent = nullptr);
+    explicit TriangleWidget(QWidget *parent = 0);
     ~TriangleWidget();
 
 protected slots:

@@ -13,7 +13,7 @@ class BaseWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit BaseWidget(QWidget *parent = nullptr);
+    explicit BaseWidget(QWidget *parent = 0);
 
 signals:
     void signalResult(const myMath::Triangle&);

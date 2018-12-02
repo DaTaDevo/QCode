@@ -12,7 +12,7 @@ class SquareWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit SquareWidget(QWidget *parent = nullptr);
+    explicit SquareWidget(QWidget *parent = 0);
     ~SquareWidget();
 
 private:

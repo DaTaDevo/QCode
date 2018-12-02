@@ -12,14 +12,14 @@ TriangleWidget::TriangleWidget(QWidget *parent) :
     ui->setupUi(this);
 
     // список  разновидностей треугольников
-    hashFlag[TypeTriangle::equilateralTriangle] = "Прямоугольный";
-    hashFlag[TypeTriangle::isoscelesTriangle] = "Ровностороний";
-    hashFlag[TypeTriangle::orthogonalTriangle] = "Ровнобедренный";
+    hashFlag[TypeTriangle::versatileTriangle] = "Разносторонний";
+    hashFlag[TypeTriangle::isoscelesTriangle] = "Равнобедренный";
+    hashFlag[TypeTriangle::rightTriangle] = "Прямоугольный";
 
     // заполняет comboBox, типами треугольников
-    ui->triangleType->insertItem(TypeTriangle::equilateralTriangle, hashFlag.value(TypeTriangle::equilateralTriangle));
+    ui->triangleType->insertItem(TypeTriangle::versatileTriangle, hashFlag.value(TypeTriangle::versatileTriangle));
     ui->triangleType->insertItem(TypeTriangle::isoscelesTriangle, hashFlag.value(TypeTriangle::isoscelesTriangle));
-    ui->triangleType->insertItem(TypeTriangle::orthogonalTriangle, hashFlag.value(TypeTriangle::orthogonalTriangle));
+    ui->triangleType->insertItem(TypeTriangle::rightTriangle, hashFlag.value(TypeTriangle::rightTriangle));
 
     // получаем данные из spinBox
     startTask(ui->triangleType->currentIndex());
@@ -50,6 +50,10 @@ void TriangleWidget::startTask(int numTask)
     result.ab = ui->spinBoxAB->value();
     result.bc = ui->spinBoxBC->value();
     result.ac = ui->spinBoxAC->value();
+    result.a   = ui->spinBoxA->value();
+    result.b   = ui->spinBoxB->value();
+    result.c   = ui->spinBoxC->value();
+
 
     // заносим входищие данные
     tmpData.inData = &result;
@@ -58,14 +62,27 @@ void TriangleWidget::startTask(int numTask)
     tmpData = myMath::ForwardTriangleSide(result);
 
     //тут нужно воспользоваться switch
-//    switch (numTask) {
-//    case TypeTriangle::equilateralTriangle: {
-        // Тут код связаный с решением задач прямогольных треугольников
-        // по такому принципу поступаешь со всеми видами треугольников
-//    }
-//    default:
-//        break;
-//    }
+  switch (numTask) {
+ case TypeTriangle::versatileTriangle :
+  {
+         myMath::SearchSideVersatile(); break;
+  }
+  case TypeTriangle::isoscelesTriangle :
+  {
+      result.ab = result.bc;
+      result.a = result.c;
+      myMath::SearchSideIsosceles(); break;
+  }
+  case TypeTriangle ::rightTriangle :
+  {
+      result.a = 90;
+      myMath::SearchSideRight(); break;
+  }
+    default:
+        break;
+  }
+       // Тут код связаный с решением задач прямогольных треугольников
+       // по такому принципу поступаешь со всеми видами треугольников
 
     // вызываем сигнал об окончании решения задачи
     emit signalResult(tmpData);

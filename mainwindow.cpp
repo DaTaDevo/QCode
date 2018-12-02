@@ -48,7 +48,7 @@ void MainWindow::upWidget(QListWidgetItem *current, QListWidgetItem *previous)
     connect(wgt, SIGNAL(signalResult(myMath::Triangle)), this, SLOT(sendMsgConsole(myMath::Triangle)));
 }
 
-// здесь вы выводи все информацию в консоль
+// здесь выводим всю информацию в консоль
 void MainWindow::sendMsgConsole(myMath::Triangle data)
 {
     // вывод ошибок

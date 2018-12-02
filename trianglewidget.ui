@@ -29,6 +29,16 @@
      <item>
       <widget class="QDoubleSpinBox" name="spinBoxAB"/>
      </item>
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Угол А</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="spinBoxA"/>
+     </item>
     </layout>
    </item>
    <item>
@@ -43,6 +53,16 @@
      <item>
       <widget class="QDoubleSpinBox" name="spinBoxBC"/>
      </item>
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Угол В</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="spinBoxB"/>
+     </item>
     </layout>
    </item>
    <item>
@@ -56,6 +76,16 @@
      </item>
      <item>
       <widget class="QDoubleSpinBox" name="spinBoxAC"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Угол С</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="spinBoxC"/>
      </item>
     </layout>
    </item>
