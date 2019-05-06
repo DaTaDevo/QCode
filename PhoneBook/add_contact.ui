@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Add_Contact</class>
+ <widget class="QDialog" name="Add_Contact">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Nunito SemiBold</family>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>80</y>
+     <width>221</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QLabel" name="text_number">
+      <property name="text">
+       <string>Number</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="text_name">
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="set_number">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Type text...</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="set_name">
+      <property name="styleSheet">
+       <string notr="true">QLineEdit
+{
+border-radius:3
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Type text...</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>200</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background : #2679ff;
+border-radius : 9;
+border: 2px solid blue;
+color: white;
+}
+QPushButton::hover
+{
+	background : #2a67c9;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Add</string>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/system/ico/contact (1).png</normaloff>:/system/ico/contact (1).png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>260</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nunito SemiBold</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background : white;
+border-radius : 9;
+border: 2px solid blue;
+color: blue;
+}
+QPushButton::hover
+{
+	background : #2679ff;
+	color:white;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/system/ico/error.png</normaloff>:/system/ico/error.png</iconset>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>Add_Contact</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>349</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>333</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

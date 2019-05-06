@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/system">
+        <file>ico/contact (1).png</file>
+        <file>ico/error.png</file>
+    </qresource>
+</RCC>
